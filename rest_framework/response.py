@@ -35,6 +35,7 @@ class Response(SimpleTemplateResponse):
         self.template_name = template_name
         self.exception = exception
         self.content_type = content_type
+        self._closable_objects = []
 
         if headers:
             for name, value in six.iteritems(headers):
